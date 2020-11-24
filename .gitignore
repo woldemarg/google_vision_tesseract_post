@@ -1,3 +1,10 @@
+# mine
+**/.spyproject
+**/.pylint.d
+**/__pycache__
+**/.ipynb_checkpoints
+**/credentials
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
