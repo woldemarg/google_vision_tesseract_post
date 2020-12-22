@@ -1,4 +1,4 @@
-from google.cloud import vision
+import google.cloud.vision_v1 as vision
 from google.oauth2 import service_account
 import pandas as pd
 import numpy as np
@@ -163,7 +163,7 @@ class DemoOCR():
                        .Credentials
                        .from_service_account_file(self.json_path))
         client = vision.ImageAnnotatorClient(credentials=credentials)
-        image = vision.Image(content=image_bytes)
+        image = vision.types.Image(content=image_bytes)
         response = client.document_text_detection(image=image)
         document = response.full_text_annotation
         anno_ls = self.get_word_representation(document)
